@@ -23,8 +23,6 @@ class ContactsViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "Contacts"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-        //navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.green]
-
         fetchData()
         // Do any additional setup after loading the view.
     }

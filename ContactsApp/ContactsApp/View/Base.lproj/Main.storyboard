@@ -98,6 +98,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LQi-de-a88">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.48627450980392156" green="0.8784313725490196" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -290,7 +294,6 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstItem="ijP-S2-XLD" firstAttribute="top" secondItem="hEO-5n-F1o" secondAttribute="top" id="Ekn-qr-Ts9"/>
                                                     <constraint firstItem="ijP-S2-XLD" firstAttribute="centerX" secondItem="hEO-5n-F1o" secondAttribute="centerX" id="Hsb-6U-B6o"/>
@@ -319,7 +322,6 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstItem="yUz-V6-pgo" firstAttribute="top" secondItem="MB3-x7-Yd7" secondAttribute="top" id="FfN-Sf-BZF"/>
                                                     <constraint firstItem="jfI-Ky-k6C" firstAttribute="top" secondItem="yUz-V6-pgo" secondAttribute="bottom" constant="4" id="iqY-95-maB"/>
@@ -348,7 +350,6 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstItem="yC2-PZ-Zbb" firstAttribute="top" secondItem="udW-wU-64E" secondAttribute="top" id="L2M-1a-4Ja"/>
                                                     <constraint firstItem="RGC-Yk-21z" firstAttribute="centerX" secondItem="yC2-PZ-Zbb" secondAttribute="centerX" id="QWc-lj-2jP"/>
@@ -378,6 +379,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="0.48627450979999998" green="0.87843137250000003" blue="0.86274509803921573" alpha="0.18241652397260275" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="KY6-C6-0sf" firstAttribute="top" secondItem="JpR-eG-mzX" secondAttribute="bottom" constant="8" id="4Xs-lz-jK1"/>
                                     <constraint firstAttribute="trailing" secondItem="eWR-7w-VG3" secondAttribute="trailing" constant="44" id="Eb2-a4-HId"/>
