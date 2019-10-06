@@ -24,6 +24,8 @@
 		AD901CBE2349F54500D3AFB5 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CBD2349F54500D3AFB5 /* ContactsViewModel.swift */; };
 		AD901CC12349F59D00D3AFB5 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CC02349F59C00D3AFB5 /* ContactTableViewCell.swift */; };
 		AD901CC32349FB5000D3AFB5 /* ImageDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CC22349FB5000D3AFB5 /* ImageDownloadManager.swift */; };
+		AD901CC5234A0DCC00D3AFB5 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CC4234A0DCC00D3AFB5 /* ContactDetailViewController.swift */; };
+		AD901CC7234A0F8D00D3AFB5 /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CC6234A0F8D00D3AFB5 /* ContactDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		AD901CBD2349F54500D3AFB5 /* ContactsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		AD901CC02349F59C00D3AFB5 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		AD901CC22349FB5000D3AFB5 /* ImageDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadManager.swift; sourceTree = "<group>"; };
+		AD901CC4234A0DCC00D3AFB5 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
+		AD901CC6234A0F8D00D3AFB5 /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				AD901CBD2349F54500D3AFB5 /* ContactsViewModel.swift */,
+				AD901CC6234A0F8D00D3AFB5 /* ContactDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			children = (
 				AD901CB92349F52800D3AFB5 /* BaseViewController.swift */,
 				AD901CBB2349F53800D3AFB5 /* ContactsViewController.swift */,
+				AD901CC4234A0DCC00D3AFB5 /* ContactDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -352,12 +358,14 @@
 			files = (
 				AD901C7D2349F05900D3AFB5 /* ViewController.swift in Sources */,
 				AD901CBE2349F54500D3AFB5 /* ContactsViewModel.swift in Sources */,
+				AD901CC7234A0F8D00D3AFB5 /* ContactDetailViewModel.swift in Sources */,
 				AD901CC12349F59D00D3AFB5 /* ContactTableViewCell.swift in Sources */,
 				AD901CC32349FB5000D3AFB5 /* ImageDownloadManager.swift in Sources */,
 				AD901C792349F05900D3AFB5 /* AppDelegate.swift in Sources */,
 				AD901C7B2349F05900D3AFB5 /* SceneDelegate.swift in Sources */,
 				AD901CAD2349F16C00D3AFB5 /* Reachability.swift in Sources */,
 				AD901CAC2349F16C00D3AFB5 /* Constants.swift in Sources */,
+				AD901CC5234A0DCC00D3AFB5 /* ContactDetailViewController.swift in Sources */,
 				AD901CBC2349F53800D3AFB5 /* ContactsViewController.swift in Sources */,
 				AD901CBA2349F52800D3AFB5 /* BaseViewController.swift in Sources */,
 				AD901CAE2349F16C00D3AFB5 /* ServiceManager.swift in Sources */,

@@ -8,6 +8,9 @@
 
 import UIKit
 
+typealias SuccessClosure = (_ status: Bool, _ message: Data) -> Void
+typealias FailureClosure = (_ status: Bool, _ message: String) -> Void
+typealias DataClosure = (_ status: Bool, _ data: Any) -> Void
 
 struct ServiceURL {
     static let baseUrl = "http://gojek-contacts-app.herokuapp.com"

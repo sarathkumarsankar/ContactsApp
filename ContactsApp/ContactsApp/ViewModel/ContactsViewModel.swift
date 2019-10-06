@@ -7,9 +7,6 @@
 //
 
 import UIKit
-typealias SuccessClosure = (_ status: Bool, _ message: Data) -> Void
-typealias FailureClosure = (_ status: Bool, _ message: String) -> Void
-typealias DataClosure = (_ status: Bool, _ data: Any) -> Void
 
 class ContactsViewModel: NSObject {
     var contactsModel: [ContactsModel]?

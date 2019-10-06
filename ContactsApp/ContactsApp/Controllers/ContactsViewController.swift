@@ -22,6 +22,9 @@ class ContactsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Contacts"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        //navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.green]
+
         fetchData()
         // Do any additional setup after loading the view.
     }
@@ -29,14 +32,19 @@ class ContactsViewController: BaseViewController {
     // MARK: -  Fetch contacts from API
     func fetchData() {
         self.actiVityIndicator.startAnimating()
-        viewModel.fetchContacts(urlString: ServiceURL.baseUrl + ServiceURL.contacts, completionHandler: { (status, response) in
-            self.actiVityIndicator.stopAnimating()
-            self.dataSourceArray = self.viewModel.grouping(model: response as! [ContactsModel])
+        viewModel.fetchContacts(urlString: ServiceURL.baseUrl + ServiceURL.contacts, completionHandler: { [weak self] (status, response) in
+            self?.actiVityIndicator.stopAnimating()
+            self?.dataSourceArray = (self?.viewModel.grouping(model: response as! [ContactsModel]))!
         }) { (status, error) in
             self.showAlert(message: error)
             self.actiVityIndicator.stopAnimating()
         }
     }
+    
+    @objc func addTapped() {
+        
+    }
+
 }
 
 // MARK: -  UITableViewDelegate Methods
@@ -51,6 +59,14 @@ extension ContactsViewController: UITableViewDelegate {
     
     func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return dataSourceArray.map{$0.letter!}
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let id = dataSourceArray[indexPath.section].names?[indexPath.row].id
+        let contactDetailVC = ContactDetailViewController.instantiateFromStoryboard()
+        contactDetailVC.contactId = id
+        contactDetailVC.indexPath = indexPath
+        self.navigationController?.pushViewController(contactDetailVC, animated: true)
     }
     
 }
