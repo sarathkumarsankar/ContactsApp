@@ -17,11 +17,12 @@ class ContactDetailViewController: BaseViewController {
     @IBOutlet weak var emailLabel: UILabel!
     var contactId: Int?
     var indexPath: IndexPath?
-
+    var isFavourite: Bool?
+    
+    // MARK: -  View controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editTapped))
-
         getContactDetail()
         // Do any additional setup after loading the view.
     }
@@ -38,14 +39,15 @@ class ContactDetailViewController: BaseViewController {
         
     }
     
+    // MARK: -  Fetch contact detail from API
     func getContactDetail() {
         guard let id = contactId else {
             return
         }
         self.actiVityIndicator.startAnimating()
         viewModel.getContactDetail(urlString: ServiceURL.baseUrl + ServiceURL.contactDeatail, contactId: id, completionHandler: { (status, response) in
-            self.actiVityIndicator.stopAnimating()
             DispatchQueue.main.async {
+                self.actiVityIndicator.stopAnimating()
                 self.updateUI(data: response as! ContactDetailModel)
             }
         }) { (status, error) in
@@ -54,18 +56,22 @@ class ContactDetailViewController: BaseViewController {
         }
     }
     
+    // MARK: -  Update UI
     func updateUI(data: ContactDetailModel) {
         nameLabel.text = (data.first_name ?? "") + " " + (data.last_name ?? "")
         mobileLabel.text = data.phone_number
         emailLabel.text = data.email
         if data.favorite == true {
+            isFavourite = true
             favouriteButton.setImage(UIImage(named: "FavouriteButtonSelected"), for: .normal)
         } else {
+            isFavourite = false
             favouriteButton.setImage(UIImage(named: "FavouriteButton"), for: .normal)
         }
         getImage(urlString: data.profile_pic ?? "", indexPath: indexPath!)
     }
     
+    // MARK: - Download image
     func getImage(urlString: String, indexPath: IndexPath) {
         viewModel.getImage(url: urlString, indexPath: indexPath, completionHandler: { [weak self] (status, response) in
             if response as? UIImage != nil {
@@ -85,6 +91,24 @@ class ContactDetailViewController: BaseViewController {
     @IBAction func emailTapped(_ sender: Any) {
     }
     
+    // MARK: - Favourite button tapped
     @IBAction func favouriteTapped(_ sender: Any) {
+        self.actiVityIndicator.startAnimating()
+        viewModel.addFavourite(urlString: ServiceURL.baseUrl + ServiceURL.contacts, contactId: contactId!, favourite: !isFavourite!, completionHandler: { [weak  self] (status, response) in
+            DispatchQueue.main.async {
+                self?.actiVityIndicator.stopAnimating()
+                let data = response as! ContactDetailModel
+                if data.favorite == true {
+                    self?.isFavourite = true
+                    self?.favouriteButton.setImage(UIImage(named: "FavouriteButtonSelected"), for: .normal)
+                } else {
+                    self?.isFavourite = false
+                    self?.favouriteButton.setImage(UIImage(named: "FavouriteButton"), for: .normal)
+                }
+            }
+        }) { (status, error) in
+            self.showAlert(message: error)
+            self.actiVityIndicator.stopAnimating()
+        }
     }
 }

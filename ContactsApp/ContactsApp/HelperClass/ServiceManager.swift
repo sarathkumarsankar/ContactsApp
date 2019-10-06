@@ -20,6 +20,7 @@ enum ServiceType: String {
 }
 
 class ServiceManager: NSObject {
+    var parameter: [String: Any]?
     
     func callWebService(withURL: String, serviceType: ServiceType!, completionHandler: @escaping successClosure, failureHandler:@escaping failureClosure ) {
         if Reachability.isConnectedToNetwork() {
@@ -31,6 +32,13 @@ class ServiceManager: NSObject {
             var request = URLRequest(url: URL(string: withURL)!)
             request.httpMethod = serviceType.rawValue
             request.allHTTPHeaderFields = headers
+            if serviceType == .PUT || serviceType == .POST {
+                do {
+                    request.httpBody = try JSONSerialization.data(withJSONObject: parameter as Any, options: .prettyPrinted)
+                } catch let error {
+                    print(error.localizedDescription)
+                }
+            }
             let session = URLSession(configuration: configuration, delegate: self, delegateQueue: OperationQueue.main)
             session.dataTask(with: request) { (data, response, error) in
                 if let error = error {

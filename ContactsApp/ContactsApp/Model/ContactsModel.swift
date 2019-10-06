@@ -32,4 +32,16 @@ class ContactDetailModel: Codable {
     var favorite: Bool?
     var created_at: String?
     var updated_at: String?
+    
+    convenience init(id: Int? = nil, first_name: String? = nil, last_name: String? = nil, email: String? = nil, phone_number: String? = nil, profile_pic: String? = nil, favorite: Bool? = nil) {
+        self.init()
+        self.id =  id
+        self.first_name =  first_name
+        self.last_name =  last_name
+        self.email =  email
+        self.phone_number =  phone_number
+        self.profile_pic =  profile_pic
+        self.favorite =  favorite
+    }
 }
+

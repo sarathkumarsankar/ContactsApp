@@ -23,8 +23,11 @@ class ContactsViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "Contacts"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-        fetchData()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchData()
     }
     
     // MARK: -  Fetch contacts from API
