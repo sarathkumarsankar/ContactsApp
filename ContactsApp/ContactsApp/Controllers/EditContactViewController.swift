@@ -14,9 +14,12 @@ class EditContactViewController: BaseViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var mobileTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var profileImageView: UIImageView!
+    
     var contactDetailModel: ContactDetailModel?
     var viewModel = EditContactViewModel()
     var type: FeatureType?
+    var image: UIImage?
 
     // MARK: -  View controller life cycle
     override func viewDidLoad() {
@@ -46,6 +49,7 @@ class EditContactViewController: BaseViewController {
         lastNameTextField.text = contactDetailModel?.last_name
         mobileTextField.text = contactDetailModel?.phone_number
         emailTextField.text = contactDetailModel?.email
+        self.profileImageView.maskCircle(image: image!, border: true)
     }
     
     // MARK: -  Done button click actiom

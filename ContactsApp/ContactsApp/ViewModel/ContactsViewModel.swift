@@ -12,6 +12,7 @@ class ContactsViewModel: NSObject {
     var contactsModel: [ContactsModel]?
     let baseService = ServiceManager()
 
+    // MARK: - Get contact from API
     func fetchContacts(urlString: String, completionHandler: @escaping DataClosure, failureHandler: @escaping FailureClosure) {
         baseService.callWebService(withURL: urlString + ".json", serviceType: .GET, completionHandler: {(status, data) in            
             do {
@@ -28,6 +29,7 @@ class ContactsViewModel: NSObject {
         })
     }
     
+    // MARK: - convert array to group dictionary
     func grouping(model: [ContactsModel]) -> [SectionModel] {
         let groupedDictionary = Dictionary(grouping: model) { String($0.first_name?.prefix(1).uppercased() ?? "") }
         let sortedDictionary = groupedDictionary.sorted(by: { $0.0 < $1.0 })
@@ -35,9 +37,20 @@ class ContactsViewModel: NSObject {
         for (key, values) in sortedDictionary {
             let sectionModel = SectionModel()
             sectionModel.letter = key
-            sectionModel.names = values
+            sectionModel.names =  sortedArray(array: values)
             array.append(sectionModel)
         }
         return array
     }
+    
+    // MARK: - Sort values in Descending order
+    func sortedArray(array: [ContactsModel]) -> [ContactsModel] {
+        let sortedValues = array.sorted(by: { (firstObject, secondObject) -> Bool in
+           let first_Name = firstObject.first_name ?? ""
+           let second_Name = firstObject.last_name ?? ""
+           return (first_Name.localizedCaseInsensitiveCompare(second_Name) == .orderedDescending)
+        })
+        return sortedValues
+    }
+
 }

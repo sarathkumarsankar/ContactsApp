@@ -41,6 +41,7 @@ class ContactDetailViewController: BaseViewController {
         let editContactVC = EditContactViewController.instantiateFromStoryboard()
         editContactVC.contactDetailModel = model
         editContactVC.type = FeatureType.edit
+        editContactVC.image = profileImageView.image
         self.navigationController?.pushViewController(editContactVC, animated: true)
     }
     
@@ -81,7 +82,7 @@ class ContactDetailViewController: BaseViewController {
     func getImage(urlString: String, indexPath: IndexPath) {
         viewModel.getImage(url: urlString, indexPath: indexPath, completionHandler: { [weak self] (status, response) in
             if response as? UIImage != nil {
-                self?.profileImageView.maskCircle(image: (response as? UIImage)!)
+                self?.profileImageView.maskCircle(image: (response as? UIImage)!, border: true)
             }
         })
     }

@@ -9,11 +9,15 @@
 import UIKit
 extension UIImageView {
     // MARK: - make image view circle
-    public func maskCircle(image: UIImage) {
+    public func maskCircle(image: UIImage, border: Bool) {
         self.contentMode = UIView.ContentMode.scaleAspectFill
         self.layer.cornerRadius = self.frame.height / 2
         self.layer.masksToBounds = false
         self.clipsToBounds = true
+        if border == true {
+            self.layer.borderWidth = 3
+            self.layer.borderColor = UIColor.white.cgColor
+        }
         self.image = image
     }
 }
@@ -48,7 +52,7 @@ class ContactTableViewCell: UITableViewCell {
                 return
             }
             DispatchQueue.main.async {
-                self.profileImageView.maskCircle(image: profImage)
+                self.profileImageView.maskCircle(image: profImage, border: false)
             }
         })
 
