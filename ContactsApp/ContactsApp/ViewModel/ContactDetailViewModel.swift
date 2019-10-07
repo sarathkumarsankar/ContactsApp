@@ -19,7 +19,7 @@ class ContactDetailViewModel: NSObject {
                 completionHandler(status, response)
             } catch let error {
                 print(error)
-                failureHandler(false, "faile to serialize")
+                failureHandler(false, "fail to serialize")
             }
 
         }, failureHandler: { (status, error) in
@@ -51,7 +51,7 @@ class ContactDetailViewModel: NSObject {
                 completionHandler(status, response)
             } catch let error {
                 print(error)
-                failureHandler(false, "faile to serialize")
+                failureHandler(false, "fail to serialize")
             }
 
         }, failureHandler: { (status, error) in

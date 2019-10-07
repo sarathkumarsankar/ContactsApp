@@ -43,9 +43,10 @@ class ContactsViewController: BaseViewController {
     }
     
     @objc func addTapped() {
-        
+        let editContactVC = EditContactViewController.instantiateFromStoryboard()
+        editContactVC.type = FeatureType.add
+        self.navigationController?.pushViewController(editContactVC, animated: true)
     }
-
 }
 
 // MARK: -  UITableViewDelegate Methods

@@ -20,11 +20,16 @@ struct ServiceURL {
 
 enum ErrorType: String {
     case notFound = "Not Found"
-    case validationError = "Validation Errors"
+    case validationError = "Please enter valid detail"
     case internalServerError = "Internal Server Error"
     case badRequest = "Bad Request"
     case tryAgain = "Try again later"
     case internetNotThere = "Please check the internet connectivity"
+    case emptyField = "Please enter all the field"
+}
+
+public enum FeatureType {
+    case edit, add
 }
 
 struct ErrorModel {

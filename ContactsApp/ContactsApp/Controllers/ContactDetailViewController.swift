@@ -18,7 +18,7 @@ class ContactDetailViewController: BaseViewController {
     var contactId: Int?
     var indexPath: IndexPath?
     var isFavourite: Bool?
-    
+    var model: ContactDetailModel?
     // MARK: -  View controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,8 @@ class ContactDetailViewController: BaseViewController {
 
     @objc func editTapped() {
         let editContactVC = EditContactViewController.instantiateFromStoryboard()
+        editContactVC.contactDetailModel = model
+        editContactVC.type = FeatureType.edit
         self.navigationController?.pushViewController(editContactVC, animated: true)
     }
     
@@ -46,10 +48,10 @@ class ContactDetailViewController: BaseViewController {
             return
         }
         self.actiVityIndicator.startAnimating()
-        viewModel.getContactDetail(urlString: ServiceURL.baseUrl + ServiceURL.contactDeatail, contactId: id, completionHandler: { (status, response) in
+        viewModel.getContactDetail(urlString: ServiceURL.baseUrl + ServiceURL.contactDeatail, contactId: id, completionHandler: { [weak self] (status, response) in
             DispatchQueue.main.async {
-                self.actiVityIndicator.stopAnimating()
-                self.updateUI(data: response as! ContactDetailModel)
+                self?.actiVityIndicator.stopAnimating()
+                self?.updateUI(data: response as! ContactDetailModel)
             }
         }) { (status, error) in
             self.showAlert(message: error)
@@ -59,6 +61,7 @@ class ContactDetailViewController: BaseViewController {
     
     // MARK: -  Update UI
     func updateUI(data: ContactDetailModel) {
+        model = data
         nameLabel.text = (data.first_name ?? "") + " " + (data.last_name ?? "")
         mobileLabel.text = data.phone_number
         emailLabel.text = data.email

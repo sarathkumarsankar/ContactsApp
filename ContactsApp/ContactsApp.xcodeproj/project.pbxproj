@@ -27,6 +27,7 @@
 		AD901CC5234A0DCC00D3AFB5 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CC4234A0DCC00D3AFB5 /* ContactDetailViewController.swift */; };
 		AD901CC7234A0F8D00D3AFB5 /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CC6234A0F8D00D3AFB5 /* ContactDetailViewModel.swift */; };
 		AD901CC9234B040A00D3AFB5 /* EditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CC8234B040A00D3AFB5 /* EditContactViewController.swift */; };
+		AD901CCB234B147400D3AFB5 /* EditContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CCA234B147400D3AFB5 /* EditContactViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		AD901CC4234A0DCC00D3AFB5 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		AD901CC6234A0F8D00D3AFB5 /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
 		AD901CC8234B040A00D3AFB5 /* EditContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewController.swift; sourceTree = "<group>"; };
+		AD901CCA234B147400D3AFB5 /* EditContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			children = (
 				AD901CBD2349F54500D3AFB5 /* ContactsViewModel.swift */,
 				AD901CC6234A0F8D00D3AFB5 /* ContactDetailViewModel.swift */,
+				AD901CCA234B147400D3AFB5 /* EditContactViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				AD901C7D2349F05900D3AFB5 /* ViewController.swift in Sources */,
 				AD901CBE2349F54500D3AFB5 /* ContactsViewModel.swift in Sources */,
 				AD901CC7234A0F8D00D3AFB5 /* ContactDetailViewModel.swift in Sources */,
+				AD901CCB234B147400D3AFB5 /* EditContactViewModel.swift in Sources */,
 				AD901CC12349F59D00D3AFB5 /* ContactTableViewCell.swift in Sources */,
 				AD901CC32349FB5000D3AFB5 /* ImageDownloadManager.swift in Sources */,
 				AD901CC9234B040A00D3AFB5 /* EditContactViewController.swift in Sources */,

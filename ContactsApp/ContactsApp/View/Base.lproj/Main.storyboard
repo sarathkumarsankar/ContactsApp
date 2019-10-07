@@ -641,6 +641,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2er-zC-iLn"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="VQf-3w-9d1" id="VAG-ZH-mz7"/>
+                        <outlet property="firstNameTextField" destination="Q77-by-DAh" id="MZ0-aI-WTg"/>
+                        <outlet property="lastNameTextField" destination="yEh-d0-KGw" id="sPP-sn-aZ3"/>
+                        <outlet property="mobileTextField" destination="a98-m2-CYs" id="z4A-bb-YPU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kq-6q-ucg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

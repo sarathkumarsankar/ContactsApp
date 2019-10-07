@@ -15,6 +15,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpLoadingIndicator()
+        self.setupHideKeyboardOnTap()
         // Do any additional setup after loading the view.
     }
     
@@ -41,6 +42,19 @@ class BaseViewController: UIViewController {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+
+    /// Call this once to dismiss open keyboards by tapping anywhere in the view controller
+    func setupHideKeyboardOnTap() {
+        self.view.addGestureRecognizer(self.endEditingRecognizer())
+        self.navigationController?.navigationBar.addGestureRecognizer(self.endEditingRecognizer())
+    }
+
+    /// Dismisses the keyboard from self.view
+    private func endEditingRecognizer() -> UIGestureRecognizer {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        return tap
     }
 
 }
