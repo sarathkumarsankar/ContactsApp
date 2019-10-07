@@ -32,6 +32,7 @@ class ServiceManager: NSObject {
             var request = URLRequest(url: URL(string: withURL)!)
             request.httpMethod = serviceType.rawValue
             request.allHTTPHeaderFields = headers
+            request.timeoutInterval = 60
             if serviceType == .PUT || serviceType == .POST {
                 do {
                     request.httpBody = try JSONSerialization.data(withJSONObject: parameter as Any, options: .prettyPrinted)

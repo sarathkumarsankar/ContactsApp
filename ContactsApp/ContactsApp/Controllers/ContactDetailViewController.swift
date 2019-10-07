@@ -36,7 +36,8 @@ class ContactDetailViewController: BaseViewController {
     }
 
     @objc func editTapped() {
-        
+        let editContactVC = EditContactViewController.instantiateFromStoryboard()
+        self.navigationController?.pushViewController(editContactVC, animated: true)
     }
     
     // MARK: -  Fetch contact detail from API
@@ -81,14 +82,17 @@ class ContactDetailViewController: BaseViewController {
     }
     
     @IBAction func messageTapped(_ sender: Any) {
+        
     }
     
     
     @IBAction func callTapped(_ sender: Any) {
+        
     }
     
     
     @IBAction func emailTapped(_ sender: Any) {
+        
     }
     
     // MARK: - Favourite button tapped
