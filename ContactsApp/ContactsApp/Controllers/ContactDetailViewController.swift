@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class ContactDetailViewController: BaseViewController {
     var viewModel = ContactDetailViewModel()
@@ -34,7 +35,7 @@ class ContactDetailViewController: BaseViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! ContactDetailViewController
     }
-
+    
     // MARK: -  Edit button click actiom
     @objc func editTapped() {
         let editContactVC = EditContactViewController.instantiateFromStoryboard()
@@ -82,21 +83,59 @@ class ContactDetailViewController: BaseViewController {
             if response as? UIImage != nil {
                 self?.profileImageView.maskCircle(image: (response as? UIImage)!)
             }
-            })
+        })
     }
     
+    // MARK: - Send message
     @IBAction func messageTapped(_ sender: Any) {
-        
+        guard let number = model?.phone_number else {
+            return
+        }
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = ""
+            controller.recipients = [number] //Here goes whom you wants to send the message
+            controller.messageComposeDelegate = self as? MFMessageComposeViewControllerDelegate
+            self.present(controller, animated: true, completion: nil)
+        }
+        else{
+            print("Cannot send the message")
+        }
     }
     
+    // MARK: - Dismiss message View Controller
+    func messageComposeViewController(controller:
+        MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+        //Displaying the message screen with animation.
+        self.dismiss(animated: true, completion: nil)
+    }
     
+    // MARK: - Call phone number
     @IBAction func callTapped(_ sender: Any) {
-        
+        guard let number = model?.phone_number else {
+            return
+        }
+        let url:NSURL = URL(string: "TEL://\(number)")! as NSURL
+        UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
     }
     
     
+    // MARK: - Send Email
     @IBAction func emailTapped(_ sender: Any) {
-        
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self as? MFMailComposeViewControllerDelegate
+            mail.setToRecipients([(model?.email ?? "")])
+            mail.setMessageBody("<h1>Hello there, This is a test.<h1>", isHTML: true)
+            present(mail, animated: true)
+        } else {
+            print("Cannot send email")
+        }
+    }
+    
+    // MARK: - Dismiss Email View Controller
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
     
     // MARK: - Favourite button tapped
