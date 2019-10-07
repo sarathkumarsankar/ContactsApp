@@ -28,6 +28,7 @@
 		AD901CC7234A0F8D00D3AFB5 /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CC6234A0F8D00D3AFB5 /* ContactDetailViewModel.swift */; };
 		AD901CC9234B040A00D3AFB5 /* EditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CC8234B040A00D3AFB5 /* EditContactViewController.swift */; };
 		AD901CCB234B147400D3AFB5 /* EditContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CCA234B147400D3AFB5 /* EditContactViewModel.swift */; };
+		AD901CCE234B26FA00D3AFB5 /* ContactTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CCD234B26FA00D3AFB5 /* ContactTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		AD901CC6234A0F8D00D3AFB5 /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
 		AD901CC8234B040A00D3AFB5 /* EditContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewController.swift; sourceTree = "<group>"; };
 		AD901CCA234B147400D3AFB5 /* EditContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewModel.swift; sourceTree = "<group>"; };
+		AD901CCD234B26FA00D3AFB5 /* ContactTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 		AD901CB02349F1A500D3AFB5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AD901CCC234B268C00D3AFB5 /* CustomViews */,
 				AD901CBF2349F59C00D3AFB5 /* CustomCell */,
 				AD901C7E2349F05900D3AFB5 /* Main.storyboard */,
 			);
@@ -229,6 +232,14 @@
 				AD901CC02349F59C00D3AFB5 /* ContactTableViewCell.swift */,
 			);
 			path = CustomCell;
+			sourceTree = "<group>";
+		};
+		AD901CCC234B268C00D3AFB5 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				AD901CCD234B26FA00D3AFB5 /* ContactTableView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +376,7 @@
 				AD901C7D2349F05900D3AFB5 /* ViewController.swift in Sources */,
 				AD901CBE2349F54500D3AFB5 /* ContactsViewModel.swift in Sources */,
 				AD901CC7234A0F8D00D3AFB5 /* ContactDetailViewModel.swift in Sources */,
+				AD901CCE234B26FA00D3AFB5 /* ContactTableView.swift in Sources */,
 				AD901CCB234B147400D3AFB5 /* EditContactViewModel.swift in Sources */,
 				AD901CC12349F59D00D3AFB5 /* ContactTableViewCell.swift in Sources */,
 				AD901CC32349FB5000D3AFB5 /* ImageDownloadManager.swift in Sources */,

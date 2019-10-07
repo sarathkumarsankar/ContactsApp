@@ -35,6 +35,7 @@ class ContactDetailViewController: BaseViewController {
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! ContactDetailViewController
     }
 
+    // MARK: -  Edit button click actiom
     @objc func editTapped() {
         let editContactVC = EditContactViewController.instantiateFromStoryboard()
         editContactVC.contactDetailModel = model

@@ -18,13 +18,13 @@ class EditContactViewController: BaseViewController {
     var viewModel = EditContactViewModel()
     var type: FeatureType?
 
+    // MARK: -  View controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTapped))
         let backButton = UIBarButtonItem()
         backButton.title = "Cancel"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-
         NotificationCenter.default.addObserver(self, selector: #selector(EditContactViewController.keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(EditContactViewController.keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         if type == .edit {
@@ -40,7 +40,7 @@ class EditContactViewController: BaseViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         return storyboard.instantiateViewController(withIdentifier: String(describing: self)) as! EditContactViewController
     }
-    
+    // MARK: -  Update text field
     func updateUI() {
         firstNameTextField.text = contactDetailModel?.first_name
         lastNameTextField.text = contactDetailModel?.last_name
@@ -48,6 +48,7 @@ class EditContactViewController: BaseViewController {
         emailTextField.text = contactDetailModel?.email
     }
     
+    // MARK: -  Done button click actiom
     @objc func doneTapped() {
         // Edit contact tapped
         if type == .edit {
@@ -89,11 +90,11 @@ class EditContactViewController: BaseViewController {
     }
     
     deinit {
-         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
-
+// MARK: -  UITextFieldDelegate method
 extension EditContactViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
