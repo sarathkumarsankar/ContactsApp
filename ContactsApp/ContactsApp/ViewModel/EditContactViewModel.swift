@@ -21,7 +21,7 @@ class EditContactViewModel: NSObject {
                 completionHandler(status, response)
             } catch let error {
                 print(error)
-                failureHandler(false, "fail to serialize")
+                failureHandler(false, ErrorType.failToSerialize.rawValue)
             }
 
         }, failureHandler: { (status, error) in
@@ -42,7 +42,7 @@ class EditContactViewModel: NSObject {
                 completionHandler(status, response)
             } catch let error {
                 print(error)
-                failureHandler(false, "fail to serialize")
+                failureHandler(false, ErrorType.failToSerialize.rawValue)
             }
 
         }, failureHandler: { (status, error) in

@@ -26,6 +26,7 @@ enum ErrorType: String {
     case tryAgain = "Try again later"
     case internetNotThere = "Please check the internet connectivity"
     case emptyField = "Please enter all the field"
+    case failToSerialize = "Fail to serialize"
 }
 
 public enum FeatureType {

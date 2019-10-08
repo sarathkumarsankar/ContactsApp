@@ -114,6 +114,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD6EDB09234C57CE00D555D0 /* ViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD901CD3234C3EB900D3AFB5 /* ContactDetailViewModelTests.swift */,
+				AD901CD5234C41FD00D3AFB5 /* ContactsViewModelTests.swift */,
+				AD901CD7234C45F300D3AFB5 /* EditContactViewModelTests.swift */,
+				AD901CCF234C345700D3AFB5 /* ContactViewControllerTests.swift */,
+			);
+			path = ViewControllerTests;
+			sourceTree = "<group>";
+		};
+		AD6EDB0A234C57E700D555D0 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		AD6EDB0B234C580300D555D0 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD901CDB234C530F00D3AFB5 /* ContactsModelTests.swift */,
+			);
+			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		AD6EDB0C234C581600D555D0 /* TableViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD901CD9234C484200D3AFB5 /* ContactTableViewTests.swift */,
+			);
+			path = TableViewTests;
+			sourceTree = "<group>";
+		};
 		AD901C6C2349F05900D3AFB5 = {
 			isa = PBXGroup;
 			children = (
@@ -153,14 +187,12 @@
 		AD901C8E2349F05A00D3AFB5 /* ContactsAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				AD6EDB0C234C581600D555D0 /* TableViewTests */,
+				AD6EDB0B234C580300D555D0 /* ModelTests */,
+				AD6EDB0A234C57E700D555D0 /* ViewModelTests */,
+				AD6EDB09234C57CE00D555D0 /* ViewControllerTests */,
 				AD901C8F2349F05A00D3AFB5 /* ContactsAppTests.swift */,
 				AD901C912349F05A00D3AFB5 /* Info.plist */,
-				AD901CCF234C345700D3AFB5 /* ContactViewControllerTests.swift */,
-				AD901CD3234C3EB900D3AFB5 /* ContactDetailViewModelTests.swift */,
-				AD901CD5234C41FD00D3AFB5 /* ContactsViewModelTests.swift */,
-				AD901CD7234C45F300D3AFB5 /* EditContactViewModelTests.swift */,
-				AD901CD9234C484200D3AFB5 /* ContactTableViewTests.swift */,
-				AD901CDB234C530F00D3AFB5 /* ContactsModelTests.swift */,
 			);
 			path = ContactsAppTests;
 			sourceTree = "<group>";
