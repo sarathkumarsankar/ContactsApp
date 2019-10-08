@@ -20,6 +20,10 @@ class ContactsModel: Codable {
 class SectionModel: Codable {
     var letter: String?
     var names: [ContactsModel]?
+    init(letter: String?, names: [ContactsModel]?) {
+        self.letter = letter
+        self.names = names
+    }
 }
 
 class ContactDetailModel: Codable {

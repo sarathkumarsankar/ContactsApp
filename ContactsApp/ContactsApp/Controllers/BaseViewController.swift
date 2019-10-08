@@ -22,7 +22,7 @@ class BaseViewController: UIViewController {
     // MARK: -  Set up loading indicator
     func setUpLoadingIndicator() {
         actiVityIndicator.center = self.view.center
-        actiVityIndicator.style = UIActivityIndicatorView.Style.medium
+        actiVityIndicator.style = UIActivityIndicatorView.Style.large
         view.addSubview(actiVityIndicator)
     }
     

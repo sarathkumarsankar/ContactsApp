@@ -34,23 +34,25 @@ class ContactsViewModel: NSObject {
         let groupedDictionary = Dictionary(grouping: model) { String($0.first_name?.prefix(1).uppercased() ?? "") }
         let sortedDictionary = groupedDictionary.sorted(by: { $0.0 < $1.0 })
         var array = [SectionModel]()
-        for (key, values) in sortedDictionary {
-            let sectionModel = SectionModel()
-            sectionModel.letter = key
-            sectionModel.names =  sortedArray(array: values)
-            array.append(sectionModel)
+        autoreleasepool {
+            for (key, values) in sortedDictionary {
+                let sectionModel = SectionModel(letter: key, names: sortedArray(array: values))
+                array.append(sectionModel)
+            }
         }
         return array
     }
     
     // MARK: - Sort values in Descending order
     func sortedArray(array: [ContactsModel]) -> [ContactsModel] {
-        let sortedValues = array.sorted(by: { (firstObject, secondObject) -> Bool in
-           let first_Name = firstObject.first_name ?? ""
-           let second_Name = firstObject.last_name ?? ""
-           return (first_Name.localizedCaseInsensitiveCompare(second_Name) == .orderedDescending)
-        })
-        return sortedValues
+        autoreleasepool {
+            let sortedValues = array.sorted(by: { (firstObject, secondObject) -> Bool in
+                let first_Name = firstObject.first_name ?? ""
+                let second_Name = firstObject.last_name ?? ""
+                return (first_Name.localizedCaseInsensitiveCompare(second_Name) == .orderedDescending)
+            })
+            return sortedValues
+        }
     }
-
+    
 }

@@ -28,6 +28,12 @@
 		AD901CC9234B040A00D3AFB5 /* EditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CC8234B040A00D3AFB5 /* EditContactViewController.swift */; };
 		AD901CCB234B147400D3AFB5 /* EditContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CCA234B147400D3AFB5 /* EditContactViewModel.swift */; };
 		AD901CCE234B26FA00D3AFB5 /* ContactTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CCD234B26FA00D3AFB5 /* ContactTableView.swift */; };
+		AD901CD0234C345700D3AFB5 /* ContactViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CCF234C345700D3AFB5 /* ContactViewControllerTests.swift */; };
+		AD901CD4234C3EB900D3AFB5 /* ContactDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CD3234C3EB900D3AFB5 /* ContactDetailViewModelTests.swift */; };
+		AD901CD6234C41FD00D3AFB5 /* ContactsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CD5234C41FD00D3AFB5 /* ContactsViewModelTests.swift */; };
+		AD901CD8234C45F300D3AFB5 /* EditContactViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CD7234C45F300D3AFB5 /* EditContactViewModelTests.swift */; };
+		AD901CDA234C484200D3AFB5 /* ContactTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CD9234C484200D3AFB5 /* ContactTableViewTests.swift */; };
+		AD901CDC234C530F00D3AFB5 /* ContactsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD901CDB234C530F00D3AFB5 /* ContactsModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +81,12 @@
 		AD901CC8234B040A00D3AFB5 /* EditContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewController.swift; sourceTree = "<group>"; };
 		AD901CCA234B147400D3AFB5 /* EditContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewModel.swift; sourceTree = "<group>"; };
 		AD901CCD234B26FA00D3AFB5 /* ContactTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableView.swift; sourceTree = "<group>"; };
+		AD901CCF234C345700D3AFB5 /* ContactViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewControllerTests.swift; sourceTree = "<group>"; };
+		AD901CD3234C3EB900D3AFB5 /* ContactDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModelTests.swift; sourceTree = "<group>"; };
+		AD901CD5234C41FD00D3AFB5 /* ContactsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModelTests.swift; sourceTree = "<group>"; };
+		AD901CD7234C45F300D3AFB5 /* EditContactViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewModelTests.swift; sourceTree = "<group>"; };
+		AD901CD9234C484200D3AFB5 /* ContactTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewTests.swift; sourceTree = "<group>"; };
+		AD901CDB234C530F00D3AFB5 /* ContactsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +155,12 @@
 			children = (
 				AD901C8F2349F05A00D3AFB5 /* ContactsAppTests.swift */,
 				AD901C912349F05A00D3AFB5 /* Info.plist */,
+				AD901CCF234C345700D3AFB5 /* ContactViewControllerTests.swift */,
+				AD901CD3234C3EB900D3AFB5 /* ContactDetailViewModelTests.swift */,
+				AD901CD5234C41FD00D3AFB5 /* ContactsViewModelTests.swift */,
+				AD901CD7234C45F300D3AFB5 /* EditContactViewModelTests.swift */,
+				AD901CD9234C484200D3AFB5 /* ContactTableViewTests.swift */,
+				AD901CDB234C530F00D3AFB5 /* ContactsModelTests.swift */,
 			);
 			path = ContactsAppTests;
 			sourceTree = "<group>";
@@ -393,6 +411,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD901CDA234C484200D3AFB5 /* ContactTableViewTests.swift in Sources */,
+				AD901CD0234C345700D3AFB5 /* ContactViewControllerTests.swift in Sources */,
+				AD901CD6234C41FD00D3AFB5 /* ContactsViewModelTests.swift in Sources */,
+				AD901CDC234C530F00D3AFB5 /* ContactsModelTests.swift in Sources */,
+				AD901CD4234C3EB900D3AFB5 /* ContactDetailViewModelTests.swift in Sources */,
+				AD901CD8234C45F300D3AFB5 /* EditContactViewModelTests.swift in Sources */,
 				AD901C902349F05A00D3AFB5 /* ContactsAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
