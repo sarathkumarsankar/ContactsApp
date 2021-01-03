@@ -10,6 +10,15 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
+- task: InstallAppleCertificate@2
+  inputs:
+    certSecureFile: 'MyScure-Certificates.p12'
+    certPwd: $(P12Password)
+
+- task: InstallAppleProvisioningProfile@1
+  inputs:
+    provProfileSecureFile: 'MySecure-Provision.mobileprovision'
+    
 - task: Xcode@5
   inputs:
     actions: 'build'
